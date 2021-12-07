@@ -6,6 +6,8 @@ import com.abdur.Hunter.Repository.ApplicationRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @AllArgsConstructor
 @Service
 public class ApplicationService {
@@ -14,6 +16,10 @@ public class ApplicationService {
 
     public void createApplication(Application application){
         applicationRepository.save(application);
+    }
+
+    public List<Application> listAllApplications(){
+        return applicationRepository.findAll();
     }
 
 }

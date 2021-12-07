@@ -3,14 +3,13 @@ package com.abdur.Hunter.Model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Description {
     @Id
@@ -19,7 +18,8 @@ public class Description {
     private String jobRole;
     private String location;
     private String salary;
-
+    @OneToOne(mappedBy = "description")
+    private Application application;
 
     public Description(String jobRole, String location, String salary) {
         this.jobRole = jobRole;
