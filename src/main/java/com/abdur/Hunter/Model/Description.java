@@ -1,6 +1,7 @@
 package com.abdur.Hunter.Model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,6 +12,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name = "description")
 public class Description {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -19,5 +21,6 @@ public class Description {
     private String location;
     private String salary;
     @OneToOne(mappedBy = "description")
+    @JsonIgnore
     private Application application;
 }

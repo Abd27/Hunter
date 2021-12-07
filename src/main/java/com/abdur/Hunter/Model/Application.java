@@ -10,13 +10,15 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name = "application")
 public class Application {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
     private String companyName;
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "description_id")
+    @JoinColumn(name = "description_id", referencedColumnName = "id")
     private Description description;
 
 }
