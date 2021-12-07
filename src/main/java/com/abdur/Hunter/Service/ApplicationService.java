@@ -15,4 +15,5 @@ public class ApplicationService {
     public void createApplication(Application application){
         applicationRepository.save(application);
     }
+
 }
