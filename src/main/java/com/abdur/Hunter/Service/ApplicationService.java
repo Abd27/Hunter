@@ -21,5 +21,4 @@ public class ApplicationService {
     public List<Application> listAllApplications(){
         return applicationRepository.findAll();
     }
-
 }
