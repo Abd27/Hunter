@@ -19,9 +19,4 @@ public class Application {
     @JoinColumn(name = "description_id")
     private Description description;
 
-    public Application(String companyName){
-        this.companyName = companyName;
-        this.description = description;
-    }
-
 }

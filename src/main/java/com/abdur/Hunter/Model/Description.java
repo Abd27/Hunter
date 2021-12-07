@@ -20,10 +20,4 @@ public class Description {
     private String salary;
     @OneToOne(mappedBy = "description")
     private Application application;
-
-    public Description(String jobRole, String location, String salary) {
-        this.jobRole = jobRole;
-        this.location = location;
-        this.salary = salary;
-    }
 }
